@@ -4,7 +4,7 @@ import { HomeIcon, InboxIcon } from 'lucide-react';
 
 export const WidgetFooter = () => {
   const screen = 'selection';
-  
+
   return (
     <footer className='flex items-center justify-between border-t bg-background'>
       <Button
@@ -23,9 +23,7 @@ export const WidgetFooter = () => {
         size='icon'
         onClick={() => {}}
       >
-        <InboxIcon
-          className={cn('size-5', screen === 'inbox' && 'text-primary')}
-        />
+        <InboxIcon className={cn('size-5')} />
       </Button>
     </footer>
   );
