@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { WidgetHeader } from '@/modules/ui/components/widget-header';
+import { WidgetHeader } from '@/modules/widget/ui/components/widget-header';
 import {
   Form,
   FormControl,
