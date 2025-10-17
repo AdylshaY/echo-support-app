@@ -1,9 +1,8 @@
-import React from 'react'
+import { ConversationsView } from '@/modules/dashboard/ui/views/conversations-view';
+import React from 'react';
 
 const Page = () => {
-  return (
-    <div className='h-screen'>Conversations</div>
-  )
-}
+  return <ConversationsView />;
+};
 
-export default Page
+export default Page;
