@@ -11,7 +11,7 @@ export const ConversationsLayout = ({
   children: React.ReactNode;
 }) => {
   return (
-    <ResizablePanelGroup className='h-full flex-1' direction='horizontal'>
+    <ResizablePanelGroup className='' direction='horizontal'>
       <ResizablePanel defaultSize={30} maxSize={30} minSize={20}>
         <ConversationsPanel />
       </ResizablePanel>
