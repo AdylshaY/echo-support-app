@@ -135,7 +135,7 @@ export const WidgetChatScreen = () => {
           <MenuIcon />
         </Button>
       </WidgetHeader>
-      <AIConversation className='max-h-[calc(100vh-180px)]'>
+      <AIConversation>
         <AIConversationContent>
           <InfiniteScrollTrigger
             canLoadMore={canLoadMore}

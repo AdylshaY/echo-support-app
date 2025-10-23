@@ -1,7 +1,11 @@
 'use client';
 
 import { useAtomValue, useSetAtom } from 'jotai';
-import { ChevronRightIcon, MessageSquareTextIcon } from 'lucide-react';
+import {
+  ChevronRightIcon,
+  MessageSquareTextIcon,
+  PhoneIcon,
+} from 'lucide-react';
 import {
   contactSessionIdAtomFamily,
   conversationIdAtom,
@@ -75,6 +79,18 @@ export const WidgetSelectionScreen = () => {
           <div className='flex items-center gap-x-2'>
             <MessageSquareTextIcon className='size-4' />
             <span>Start Chat</span>
+          </div>
+          <ChevronRightIcon />
+        </Button>
+        <Button
+          className='h-16 w-full justify-between'
+          variant='outline'
+          onClick={() => setScreen('contact')}
+          disabled={isPending}
+        >
+          <div className='flex items-center gap-x-2'>
+            <PhoneIcon className='size-4' />
+            <span>Contact Us</span>
           </div>
           <ChevronRightIcon />
         </Button>
