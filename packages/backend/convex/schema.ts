@@ -3,6 +3,15 @@ import { defineTable } from 'convex/server';
 import { v } from 'convex/values';
 
 export default defineSchema({
+  widgetSettings: defineTable({
+    organizationId: v.string(),
+    greetMessage: v.string(),
+    defaultSuggestions: v.object({
+      suggestion1: v.string(),
+      suggestion2: v.string(),
+      suggestion3: v.string(),
+    }),
+  }).index('by_organizationId', ['organizationId']),
   conversations: defineTable({
     threadId: v.string(),
     organizationId: v.string(),
