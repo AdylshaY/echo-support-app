@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const Page = () => {
-  return (
-    <div>Vapi Plugin</div>
-  )
-}
+  return <div>Vapi Plugin</div>;
+};
 
-export default Page
+export default Page;
