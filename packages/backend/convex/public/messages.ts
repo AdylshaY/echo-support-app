@@ -50,6 +50,10 @@ export const create = action({
       });
     }
 
+    await ctx.runMutation(internal.system.contactSessions.refresh, {
+      contactSessionId: args.contactSessionId,
+    });
+
     // TODO: Implement subscription check.
 
     const shouldTriggerAgent = conversation.status === 'unresolved';
