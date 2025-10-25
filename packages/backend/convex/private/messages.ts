@@ -1,6 +1,6 @@
 import { ConvexError, v } from 'convex/values';
 import { action, mutation, query } from '../_generated/server';
-import { components } from '../_generated/api';
+import { components, internal } from '../_generated/api';
 import { supportAgent } from '../system/ai/agents/supportAgent';
 import { paginationOptsValidator } from 'convex/server';
 import { saveMessage } from '@convex-dev/agent';
@@ -30,6 +30,19 @@ export const enhanceResponse = action({
         message: 'Organization not found',
       });
     }
+
+    const subscription = await ctx.runQuery(
+      internal.system.subscriptions.getByOrganizationId,
+      {
+        organizationId: orgId,
+      }
+    );
+
+    if (subscription?.status !== 'active')
+      throw new ConvexError({
+        code: 'BAD_REQUEST',
+        message: 'Subscription is not active',
+      });
 
     const response = await generateText({
       model: google('gemini-2.5-flash'),
